@@ -1,0 +1,158 @@
+﻿@model IEnumerable<Excelform.Models.Excel>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<div id="Placeholderhere"></div>
+
+<head>
+    <title>Total Employees List</title>
+    <form asp-controller="Excel" asp-action="Index" method="get">
+ 
+            <div style="float: right">
+                <label for="" class="form-label">Search</label>
+                <input type="text" placeholder="emp_id,name,des,dep,.." name="searchString" />
+                <input type="submit" value="Go" />
+            </div>
+        
+    </form>
+</head>
+
+<table id="createexcel" class="table">
+
+    
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Total Employees List</title>
+        <link rel="stylesheet" href="~/css/site.css" />
+        <style>
+            .column-heading {
+                background-color: cadetblue;
+                color: white;
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            .table-row:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            .table-row:nth-child(odd) {
+                background-color: white;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 10px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            th, td {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+        </style>
+    </head>
+
+    <table id="createexcel" class="table" cellspacing="0" style="border-collapse:collapse">
+        <thead class="column-heading">
+            <tr class="header" style="font-weight:bold">
+                <th>ID</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Date Of Birth</th>
+                <th>Date Of Joining</th>
+                <th>Designation</th>
+                <th>Sub Department</th>
+                <th>Department</th>
+               
+                <th>Location</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Excel in Model)
+            {
+                <tr class="table-row" data-id="@Excel.id">
+                    <td>
+                        @Html.DisplayFor(itemDisplay => Excel.id)
+                        @Html.HiddenFor(itemDisplay => Excel.id)
+                    </td>
+                    <td>@Excel.emp_id</td>
+                    <td>@Excel.name</td>
+                    <td>@Excel.gender</td>
+                    <td>
+                        @Html.Raw(Excel.date_of_birth != null ? @Convert.ToDateTime(Excel.date_of_birth).ToString("dd.MMM.yyyy") : "N/A")
+                    </td>
+                    <td>
+                        @Html.Raw(Excel.date_of_joining != null ? @Convert.ToDateTime(Excel.date_of_joining).ToString("dd.MMM.yyyy") : "N/A")
+                    </td>
+                    <td>@Excel.designation</td>
+                    <td>@Excel.sub_department</td>
+                    <td>@Excel.department</td>
+                   
+                    <td>@Excel.location</td>
+                    <td>
+                        <a onclick="Edit(this)" data-editable="true" class='btn btn-primary'>Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @*
+    <script type="text/javascript">
+        function Edit(element) {
+            var row = $(element).closest('tr');
+            var id = row.find('input[type=hidden]').val();
+
+            if (!localStorage.getItem('hasBeenEdited_' + id)) 
+            {
+                localStorage.setItem('hasBeenEdited_' + id, 'true');
+                window.location.href = "/Excel/newview?id=" + id;
+            } 
+       else
+       {
+          alert("this field with id " + id + " has already been updated.");
+         row.hide(); 
+            }
+
+        }
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "F12" ||
+                (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) ||
+                (event.ctrlKey && event.key === "U")) {
+                event.preventDefault();
+            }
+        });
+
+      $(document).ready(function () {
+            $('tr[data-id]').each(function () {
+                var id = $(this).data('id');
+                if (localstorage.getitem('hasbeenedited_' + id)) {
+                    $(this).hide();
+                }
+            });
+        });
+    </script>
+     *@
+</html>
+
+    <script type="text/javascript">
+            function Edit(element) {
+                var id = $(element).closest('tr').find('input[type=hidden]').val();
+                window.location.href = "/Excel/newview?id=" + id;
+            }
+        </script>
+               

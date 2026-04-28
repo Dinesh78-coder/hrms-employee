@@ -1,0 +1,18 @@
+﻿@model Excel;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Employee</title>
+</head>
+<body>
+
+    <form asp-action="Search" method="post">
+        <label for="emp">Enter Employee ID:</label>
+        <input type="number" id="emp" name="emp" required />
+        <input type="submit" value="Search" />
+    </form>
+
+</body>
+</html>

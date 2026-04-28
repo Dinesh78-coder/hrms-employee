@@ -1,0 +1,220 @@
+﻿@model Excelform.Models.Excel
+<h2>Edit Employee</h2>
+@* @{
+    bool itemupdated = TempData["itemupdated"] as bool? ?? false;
+}
+@if (!itemupdated)
+{ *@
+    <form method="post" action="newview" class="mt-5" onsubmit="return showconfirm()">
+
+        <div class="container">
+            <table class="table">
+                <tbody>
+                    <div class="form-group">
+                        <div class="mb-3">
+                            <label for="" class="form-label">ID</label>
+                            <input type="" class="form-control" asp-for="id"  >
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Employee ID </label>
+                            <input id="Emp" type="number" class="form-control" asp-for="emp_id" readonly>
+                        </div> 
+                        <div class="mb-3">
+                            <label for="" class="form-label">Name</label>
+                            <input type="text" class="form-control" asp-for="name" > 
+                        </div>  
+                        <div class="mb-3">
+                            <label for="" class="form-label">Gender</label>
+                            <input type="text" class="form-control" asp-for="gender" readonly> 
+                        </div>
+                        @* <div class="md-3">
+                        <label> Gender</label>
+                        <select asp-for="gender" class="form-control" id="genderdrop" >
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Othets</option>
+                        </select>
+                    </div> *@
+                        <div class="mb-3">
+                            <label for="" class="form-label">Date Of Birth</label >
+                            <input type="date" class="form-control" asp-for="date_of_birth" readonly>
+                        </div>
+
+                          <div class="mb-3">
+                        <label for="" class="form-label">Date Of Joining </label>
+                        <input type="date" class="form-control" asp-for="date_of_joining" readonly>
+                    </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label"> Designation </label>
+                        <input type="text" class="form-control" asp-for="designation" >
+                        </div>
+
+                        @*   <div class="md-3">
+                            <label> Designation</label>
+                        <select asp-for="designation" class="form-control" id="designationdrop">
+                            <option value="Project Manager">Project Manager</option>
+                            <option value="Team Leader">Team Leader</option>
+                            <option value="Senior Developer">Senior Developer</option>
+                            <option value="Junior Developer">Junior Developer</option>
+                            <option value="Tester">Tester</option>
+                            <option value="Network Manager">Network Manager</option>
+                            <option value="Support Person">Support Person</option>
+                        </select>
+
+                    </div> *@
+
+                       
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Sub-Department</label>
+                            <input type="text" class="form-control" asp-for="sub_department" >
+                        </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Department</label>
+                        <input type="text" class="form-control" asp-for="department">
+                    </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Location</label>
+                            <input type="text" class="form-control" asp-for="location" readonly>
+                        </div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">updated_on</label>
+                        <input type="date" class="form-control" asp-for="updated_on" readonly>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+
+
+        @*  <div class="mb-3">
+                        <label for="" class="form-label">shift</label>
+                        <input type="hidden" class="form-control" asp-for="shift">
+                    </div> *@
+
+        @* <div class="mb-3">
+                        <label for="" class="form-label">date_of_resignation</label>
+                        <input type="hidden" class="form-control" asp-for="date_of_resignation">
+                    </div> *@
+
+        @*    <div class="mb-3">
+                    <label>state</label>
+                    <select asp-for="state" 
+
+
+                    ="disabled" class="form-control" id="statedrop">
+                            <option value="Chennai">Chennai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Trivandrum">Trivandrum</option>
+                        </select>
+                    </div>
+                *@
+
+        @* <div class="mb-3">
+                        <label for="" class="form-label">status</label>
+                        <input type="hidden" class="form-control" asp-for="status">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">company_classification</label>
+                        <input type="hidden" class="form-control" asp-for="company_classification">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">employee_classification</label>
+                        <input type="hidden" class="form-control" asp-for="employee_classification">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">created_on</label>
+                        <input type="hidden" class="form-control" asp-for="created_on">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">updated_on</label>
+                        <input type="hidden" class="form-control" asp-for="updated_on">
+                    </div> *@
+
+        @*  <div class="mb-3">
+                        <label for="" class="form-label">channel</label>
+                        <input type="hidden" class="form-control" asp-for="channel">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">cluster</label>
+                        <input type="hidden" class="form-control" asp-for="cluster">
+                    </div> *@
+        @*  <div class="mb-3">
+                        <label for=""  class="form-label">work_location</label>
+                        <input type="text" class="form-control" asp-for="work_location">
+                    </div> *@
+        @* <div class="mb-3">
+                        <label for="" class="form-label">payroll_location</label>
+                        <input type="hidden" class="form-control" asp-for="payroll_location">
+                    </div> *@
+
+
+        @* <script>
+        $(document).ready(function () {
+            var deignation = [
+                "Project Manager"
+                                       "Team Leader"
+                                           "Junior Developer"
+                                           "Senior Developer"
+                                               "Tester"
+                                                   "Network Manager"
+                                                       "Support Person"
+            ];
+            $.each(deignation, function (index, item)){
+                $('#designationdrop').append($('<option>', {
+                    value: item,
+                    Text: item
+                }));
+            });
+
+                       });
+        var gender = [
+            "male"
+                                   "female"
+                                       "others"
+        ];
+        $.each(gender, function (index, item))
+        {
+            $('#genderdrop').append($('<option>',
+                {
+                    value: item,
+                    Text: item
+                }));
+        });
+
+        var state = [
+            "Chennai"
+                    "Bangalore"
+                            "Hyderabad"
+                                    "Mumbai"
+                                            "Trivandrum"
+        ];
+        $.each(state, function (index, item))
+        {
+            $('#statedrop').append($('<option>',
+                {
+                    value: item,
+                    Text: item
+                }));
+        });
+
+        }
+    </script> *@
+
+        <button id="Save" type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
+
+    </form>
+
+<script>
+    function showconfirm(){
+        alert("Are you sure want to edit this form");
+        return confirm("Successfully Saved");
+    }
+        </script>

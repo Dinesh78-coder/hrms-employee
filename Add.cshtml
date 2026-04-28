@@ -1,0 +1,280 @@
+﻿@* @model List<Excelform.Models.Excel>  *@
+@model Excelform.Models.Addview;
+
+<h1>Add Employees</h1>
+
+        <form method="post" action="Add" >
+            <div class="mb-3">
+                <label for="" class="form-label">id</label>
+                <input type="text" id="textid" class="form-control" asp-for="id"  >
+                 
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">emp_id</label>
+        <input type="number" id="textemp_id" class="form-control" asp-for="emp_id" required>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">name</label>
+        <input type="text" id="textname" class="form-control" asp-for="name" required>
+            </div>
+    <div class="mb-3">
+    <label for="" class="form-label">gender</label>
+        <input type="text" id="textgender" class="form-control" asp-for="gender" required>
+        <div class="mb-3">
+            <label for="" class="form-label">date_of_birth</label>
+            <input type="date" id="textdob" class="form-control" asp-for="date_of_birth" >
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">date_of_joining </label>
+            <input type="date" id="textuon" class="form-control" asp-for="date_of_joining" required>
+        </div>
+
+    <div class="mb-3">
+         <label for="Role" class="form-label">Designation</label>
+            <input type="text" id="textdesig" class="form-control" asp-for="designation" >
+            <div class="mb-3">
+                <label for="" class="form-label">department</label>
+                <input type="text" id="textdept" class="form-control" asp-for="department" >
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">sub_department</label>
+                <input type="text" id="textsub" class="form-control" asp-for="sub_department" >
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">location</label>
+                <input type="text" id="textlocation" class="form-control" asp-for="location" >
+            </div>
+             <div class="mb-3">
+                <label for="" class="form-label">updated_on</label>
+                <input type="date" id="textuon" class="form-control" asp-for="updated_on" required>
+            </div> 
+       @*  <div class="md-3">
+        <label> Designation</label>
+            <select asp-for="designation" class="form-control" id="designationdrop">        
+        <option value="Project Manager">Project Manager</option>
+        <option value="Team Leader">Team Leader</option>
+        <option value="Senior Developer">Senior Developer</option>
+        <option value="Junior Developer">Junior Developer</option>
+        <option value="Tester">Tester</option>
+        <option value="Network Manager">Network Manager</option>
+        <option value="Support Person">Support Person</option>
+           </select> *@
+        </div>
+    </div>
+    
+           
+     @*       
+         <div class="md-3">
+        <label> gender</label>
+        <select asp-for="gender" class="form-control" id="genderdrop">
+            <option value="male">Male</option>
+        <option value="female">Female</option>
+            <option value="others">Othets</option>
+        </select>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">shift</label>
+        <input type="number" id="textshift" class="form-control" asp-for="shift"> 
+            </div>
+            
+            <div class="mb-3">
+                <label for="" class="form-label">date_of_resignation</label>
+        <input type="date" id="textdor" class="form-control" asp-for="date_of_resignation">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">location</label>
+        <input type="text" id="textlocation" class="form-control" asp-for="location">
+            </div>
+    <div class="md-3">
+    <label>state</label>
+    <select asp-for="state" class="form-control" id="statedrop">
+        <option value="Chennai">Chennai</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Trivandrum">Trivandrum</option>
+    </select>
+    </div>
+   
+            <div class="mb-3">
+                <label for="" class="form-label">status</label>
+        <input type="text" id="textstatus" class="form-control" asp-for="status">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">company_classification</label>
+        <input type="text" id="textcc" class="form-control" asp-for="company_classification">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">employee_classification</label>
+        <input type="text" id="textec" class="form-control" asp-for="employee_classification">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">created_on</label>
+        <input type="date" id="textcon" class="form-control" asp-for="created_on">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">updated_on</label>
+        <input type="date" id="textuon" class="form-control" asp-for="updated_on">
+            </div>
+           
+            <div class="mb-3">
+                <label for="" class="form-label">channel</label>
+        <input type="text" id="textchannel" class="form-control" asp-for="channel">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">cluster</label>
+        <input type="text" id="textcluster" class="form-control" asp-for="cluster">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">work_location</label>
+        <input type="text" id="textworklocation" class="form-control" asp-for="work_location">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">payroll_location</label>
+        <input type="text" id="textploc" class="form-control" asp-for="payroll_location"> 
+            </div>
+    *@
+    <button type="submit" class="btn btn-primary">Submit</button>
+   
+
+            </form>
+
+          @*  <script>
+               $(document).ready(function ()
+               {
+                   var deignation =
+                   [
+                       "Project Manager"
+                               "Team Leader"
+                                   "Junior Developer"
+                                   "Senior Developer"
+                                       "Tester"
+                                           "Network Manager"
+                                               "Support Person"
+                   ];
+                   $.each(deignation, function (index, item))
+                   {
+                       $('#designationdrop').append($('<option>', 
+                       {
+                           value: item,
+                           Text: item
+                       }));
+
+                   });
+               var gender = [
+                   "male"
+                           "female"
+                               "others"
+               ];
+               $.each(gender, function (index, item))
+               {
+    $('#genderdrop').append($('<option>',
+        {
+            value: item,
+            Text: item
+        }));
+               });
+    var state = [
+        "Chennai"
+                        "Bangalore"
+                                "Hyderabad"
+                                        "Mumbai"
+                                                "Trivandrum"
+    ];
+    $.each(state, function (index, item))
+    {
+        $('#statedrop').append($('<option>',
+            {
+                value: item,
+                Text: item
+            }));
+    });
+               }
+           </script> *@
+
+@*
+// // // <a onclick="handelsave()" class="btn btn-success">Submit</a>
+// // // <a onclick="handeldelete()" class="btn btn-primary">Cancel</a>
+// // //     <script type="text/javascript">
+// // //         function handeldelete() {
+// // //             window.location.href = "/Excel/Add";
+// // //         }
+// // //         function handelsave() {
+// // //             var id = $('#textid').val();
+// // //             var emp_id = $('#textemp_id').val();
+// // //             var name = $('#textname').val();
+// // //             var doj = $('#textdoj').val();
+// // //             var dor = $('#textdor').val();
+// // //             var status = $('#textstatus').val();
+// // //             var dob = $('#textdob').val();
+
+// // //             var isproceed = true;
+// // //             if (id != '' && id != null) {
+// // //                 $('#textid').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textid').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+// // //             if (emp_id != '' && emp_id != null) {
+// // //                 $('#textemp_id').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textemp_id').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+// // //             if (name != '' && name != null) {
+// // //                 $('#textname').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textname').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+// // //             if (doj != '' && doj != null) {
+// // //                 $('#textdoj').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textdoj').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+// // //             if (dor != '' && dor != null) {
+// // //                 $('#textdor').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textdor').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+// // //             if (status != '' && status != null) {
+// // //                 $('#textstatus').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textstatus').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+
+
+// // //             if (name != '' && name != null) {
+// // //                 $('#textname').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textname').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+// // //             if (dob != '' && dob != null) {
+// // //                 $('#textdob').css('border-color', '#ccc');
+// // //             }
+// // //             else {
+// // //                 $('#textdob').css('border-color', 'red');
+// // //                 var isproceed = false;
+// // //             }
+// // //             if (isproceed) {
+// // //                 alert("Added Successfully")
+// // //             }
+// // //             else {
+// // //                 alert("Fill the required box")
+// // //             }
+// // //         }
+// // //     </script>
+// // //
+
+            *@
